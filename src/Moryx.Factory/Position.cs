@@ -1,6 +1,6 @@
 ﻿using System.Runtime.Serialization;
 
-namespace Moryx.Simulation.Resources
+namespace Moryx.Factory
 {
     [DataContract]
     public class Position

@@ -1,7 +1,6 @@
 ﻿using Moryx.AbstractionLayer.Resources;
-using Moryx.Factory;
-
-namespace Moryx.Simulation.Resources
+using Moryx.Simulation.Resources;
+namespace Moryx.Factory
 {
     public interface IMachineLocation : ILocation, IPublicResource
     {

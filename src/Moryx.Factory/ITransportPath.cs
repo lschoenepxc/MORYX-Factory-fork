@@ -1,6 +1,5 @@
 ﻿using System.Collections.Generic;
 using Moryx.AbstractionLayer.Resources;
-using Moryx.Simulation.Resources;
 
 namespace Moryx.Factory
 {
