@@ -4,7 +4,7 @@ using System.Text;
 
 namespace Moryx.Factory
 {
-    public interface ICellImageUrl
+    public interface IResourceImage
     {
         public string ImageURL { get; set; }
     }
