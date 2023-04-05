@@ -11,7 +11,8 @@ on:
   pull_request:
     branches: 
       - dev
-      - future
+      - future 
+      
       
 env:
   MORYX_OPTIMIZE_CODE: "false"
@@ -23,7 +24,7 @@ env:
 
 jobs:
   Build:
-    uses: PHOENIXCONTACT/tools/.github/workflows/build-tool.yml@main
+    uses: lschoenepxc/tools-fork/.github/workflows/build-tool.yml@main
     with:
       MORYX_OPTIMIZE_CODE: "false"
       MORYX_BUILD_CONFIG: "Release"
@@ -34,7 +35,7 @@ jobs:
 
   UnitTests:
     needs: [Build]
-    uses: PHOENIXCONTACT/tools/.github/workflows/unittest-tool.yml@main
+    uses: lschoenepxc/tools-fork/.github/workflows/unittest-tool.yml@main
     with:
       MORYX_OPTIMIZE_CODE: "false"
       MORYX_BUILD_CONFIG: "Release"
@@ -43,9 +44,10 @@ jobs:
       DOTNET_SKIP_FIRST_TIME_EXPERIENCE: true
       REPOSITORY_NAME: ${{ github.event.repository.name }}
 
+
   IntegrationTests:
     needs: [Build]
-    uses: PHOENIXCONTACT/tools/.github/workflows/integrationtest-tool.yml@main
+    uses: lschoenepxc/tools-fork/.github/workflows/integrationtest-tool.yml@main
     with:
       MORYX_OPTIMIZE_CODE: "false"
       MORYX_BUILD_CONFIG: "Release"
@@ -56,7 +58,7 @@ jobs:
 
   ReportGenerator:
     needs: [UnitTests, IntegrationTests]
-    uses: PHOENIXCONTACT/tools/.github/workflows/reportgenerator-tool.yml@main
+    uses: lschoenepxc/tools-fork/.github/workflows/reportgenerator-tool.yml@main
     with:
       MORYX_OPTIMIZE_CODE: "false"
       MORYX_BUILD_CONFIG: "Release"
@@ -67,7 +69,7 @@ jobs:
                
   Publish-Test-Coverage:
     needs: [ReportGenerator]
-    uses: PHOENIXCONTACT/tools/.github/workflows/publish-test-coverage-tool.yml@main
+    uses: lschoenepxc/tools-fork/.github/workflows/publish-test-coverage-tool.yml@main
     with:
       MORYX_OPTIMIZE_CODE: "false"
       MORYX_BUILD_CONFIG: "Release"
@@ -81,7 +83,7 @@ jobs:
 
   Documentation:
     needs: [UnitTests]
-    uses: PHOENIXCONTACT/tools/.github/workflows/documentation-tool.yml@main
+    uses: lschoenepxc/tools-fork/.github/workflows/documentation-tool.yml@main
     with:
       MORYX_OPTIMIZE_CODE: "false"
       MORYX_BUILD_CONFIG: "Release"
@@ -92,7 +94,7 @@ jobs:
 
   Publish:
     needs: [UnitTests]
-    uses: PHOENIXCONTACT/tools/.github/workflows/publish-tool.yml@main
+    uses: lschoenepxc/tools-fork/.github/workflows/publish-tool.yml@main
     with:
       MORYX_OPTIMIZE_CODE: "false"
       MORYX_BUILD_CONFIG: "Release"
