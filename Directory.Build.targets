@@ -4,6 +4,7 @@
   <!-- Central package version management -->
   <PropertyGroup>
     <MoryxFrameworkVersion>6.0.0</MoryxFrameworkVersion>
+    <LangVersion>latest</LangVersion>
   </PropertyGroup>
 
   <Import Project=".build\Common.props" Condition="'$(CreatePackage)' == 'true'" />
