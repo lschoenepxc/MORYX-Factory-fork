@@ -94,7 +94,7 @@ jobs:
 
   Publish:
     needs: [UnitTests]
-    uses: lschoenepxc/tools-fork/.github/workflows/publish-tool.yml@main
+    uses: PHOENIXCONTACT/tools/.github/workflows/publish-tool.yml@main
     with:
       MORYX_OPTIMIZE_CODE: "false"
       MORYX_BUILD_CONFIG: "Release"
